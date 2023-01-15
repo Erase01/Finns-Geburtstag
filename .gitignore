@@ -1,5 +1,6 @@
 # go project file with downloaded deps
 go.sum
 
-# Builded executable
+# Builded executables
 Finns-Geburtstag
+files/out/a
