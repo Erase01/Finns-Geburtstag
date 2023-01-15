@@ -7,12 +7,16 @@ import (
 
 func main() {
 	r := gin.Default()
+
+	r.Static("/assets", "./assets")
+	r.LoadHTMLGlob("sites/*.html")
+
 	r.GET("/", index)
 	r.Run()
 }
 
 func index(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
-		"message": "get index",
+	c.HTML(http.StatusOK, "index.html", gin.H{
+		"text": "moin",
 	})
 }
