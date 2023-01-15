@@ -1,0 +1,5 @@
+# go project file with downloaded deps
+go.sum
+
+# Builded executable
+Finns-Geburtstag
