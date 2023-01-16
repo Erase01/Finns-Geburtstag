@@ -7,5 +7,15 @@
   </head>
   <body>
     {{template "navbar.html"}}
+    <div>
+      <p><a href="/files/out/a" download>Hier</a> binary herunterladen</p>
+      <form action="/submit_flag">
+        <label for="flag">Flag:</label>
+        <br/>
+        <input type="text" id="flag" name="flag" value="">
+        <br/>
+        <input type="submit" value="Überprüfen">
+      </form>
+    </div>
   </body>
 </html>

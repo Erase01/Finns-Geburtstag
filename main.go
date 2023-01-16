@@ -15,6 +15,8 @@ func main() {
 	r.GET("/quiz", quiz)
 	r.GET("/rdr2", rdr2)
 
+	r.POST("/submit_quiz", submit_flag)
+
 	r.Run()
 }
 
@@ -30,4 +32,8 @@ func quiz(c *gin.Context) {
 
 func rdr2(c *gin.Context) {
 	c.HTML(http.StatusOK, "rdr2.html", gin.H{})
+}
+
+func submit_flag(c *gin.Context) {
+
 }
