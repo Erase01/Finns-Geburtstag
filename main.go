@@ -1,8 +1,10 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"fmt"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -16,7 +18,7 @@ func main() {
 	r.GET("/rdr2", rdr2)
 	r.GET("/download", download)
 
-	r.POST("/submit_quiz", submit_flag)
+	r.GET("/submit_flag", submit_flag)
 
 	r.Run()
 }
@@ -34,7 +36,9 @@ func rdr2(c *gin.Context) {
 }
 
 func submit_flag(c *gin.Context) {
-
+	flag := c.Query("flag")
+	fmt.Println(flag)
+	c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{"msg": "flag richtig!"})
 }
 
 func download(c *gin.Context) {
