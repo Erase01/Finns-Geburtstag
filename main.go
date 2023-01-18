@@ -14,6 +14,7 @@ func main() {
 	r.GET("/", index)
 	r.GET("/quiz", quiz)
 	r.GET("/rdr2", rdr2)
+	r.GET("/download", download)
 
 	r.POST("/submit_quiz", submit_flag)
 
@@ -36,4 +37,8 @@ func rdr2(c *gin.Context) {
 
 func submit_flag(c *gin.Context) {
 
+}
+
+func download(c *gin.Context) {
+	c.File("files/out/a")
 }

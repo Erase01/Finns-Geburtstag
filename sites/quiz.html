@@ -8,7 +8,10 @@
   <body>
     {{template "navbar.html"}}
     <div>
-      <p><a href="/files/out/a" download="/files/out/a">Hier</a> binary herunterladen</p>
+      <p><a href="/download" download="quiz.out">Hier</a> binary herunterladen</p>
+      <br/>
+      <p><code>chmod +x ~/Downloads/quiz.out</code> nicht vergessen!</p>
+
       <form action="/submit_flag">
         <label for="flag">Flag:</label>
         <br/>
