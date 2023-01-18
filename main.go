@@ -22,9 +22,7 @@ func main() {
 }
 
 func index(c *gin.Context) {
-	c.HTML(http.StatusOK, "index.html", gin.H{
-		"text": "moin",
-	})
+	c.HTML(http.StatusOK, "index.html", gin.H{})
 }
 
 func quiz(c *gin.Context) {
