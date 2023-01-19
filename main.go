@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+
+	fmt.Printf("%x\n", string((get_hash([]byte("test")))))
 	r := gin.Default()
 
 	r.Static("/assets", "./assets")
@@ -24,7 +26,7 @@ func main() {
 }
 
 func index(c *gin.Context) {
-	c.HTML(http.StatusOK, "index.html", gin.H{})
+	c.HTML(http.StatusOK, "index.html", gin.H{"rdr2": "Nein", "quiz": "Nein"})
 }
 
 func quiz(c *gin.Context) {
