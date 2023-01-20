@@ -39,12 +39,12 @@ func rdr2(c *gin.Context) {
 
 func submit_flag(c *gin.Context) {
 	flag := c.Query("flag")
-	fmt.Println(flag)
-	hash_of_flag := string((get_hash([]byte(flag))))
-	fmt.Println(hash_of_flag)
-	if flag == "73c46df076e245e59cfe4e3d362b0c2c" {
+	hash_flag := get_hash(flag)
+	if hash_flag == "73c46df076e245e59cfe4e3d362b0c2c" {
+		fmt.Println("ja")
 		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{"quiz": "Ja!"})
 	} else {
+		fmt.Println("nein")
 		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{})
 	}
 }

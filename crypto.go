@@ -2,10 +2,11 @@ package main
 
 import (
 	"crypto/md5"
+	"encoding/hex"
 )
 
-func get_hash(testStr []byte) []byte {
+func get_hash(testStr string) string {
 	h := md5.New()
-	h.Write(testStr)
-	return h.Sum(nil)
+	h.Write([]byte(testStr))
+	return hex.EncodeToString(h.Sum(nil))
 }
