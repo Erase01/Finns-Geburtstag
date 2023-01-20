@@ -7,7 +7,6 @@
   </head>
   <body>
     {{template "navbar.html"}}
-    <p>{{ .msg }}</p>
     <div id="ctf_table">
       <table>
         <tr>
@@ -18,15 +17,14 @@
         <tr>
           <td>RDR2 Guesser</td>
           <td><a href="/rdr2">hier</a></td>
-          <td>Nein</td>
+          <td>{{.rdr2}}</td>
         </tr>
         <tr>
           <td>Quiz Spiel</td>
           <td><a href="/quiz">hier</a></td>
-          <td>Nein</td>
+          <td>{{.quiz}}</td>
         </tr>
       </table>
     </div>
-    <script type="text/javascript" src="/assets/index.js"></script>
   </body>
 </html>
