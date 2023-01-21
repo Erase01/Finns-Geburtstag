@@ -9,7 +9,6 @@ import (
 
 func main() {
 
-	// 73c46df076e245e59cfe4e3d362b0c2c is the hash of the `strings` command flag
 	r := gin.Default()
 
 	r.Static("/assets", "./assets")
@@ -45,6 +44,7 @@ func rdr2gusser(c *gin.Context) {
 func submit_flag(c *gin.Context) {
 	flag := c.Query("flag")
 	hash_flag := get_hash(flag)
+	// 73c46df076e245e59cfe4e3d362b0c2c is the hash of the `strings` command flag
 	if hash_flag == "73c46df076e245e59cfe4e3d362b0c2c" {
 		fmt.Println("ja")
 		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{"quiz": "Ja!"})
