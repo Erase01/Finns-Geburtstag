@@ -4,13 +4,16 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-
 	r := gin.Default()
 
+	store := cookie.NewStore([]byte("secret"))
+	r.Use(sessions.Sessions("session", store))
 	r.Static("/assets", "./assets")
 	r.LoadHTMLGlob("sites/*.html")
 
@@ -45,9 +48,12 @@ func submit_flag(c *gin.Context) {
 	flag := c.Query("flag")
 	hash_flag := get_hash(flag)
 	// 73c46df076e245e59cfe4e3d362b0c2c is the hash of the `strings` command flag
+	session := sessions.Default(c)
 	if hash_flag == "73c46df076e245e59cfe4e3d362b0c2c" {
-		fmt.Println("ja")
+		session.Set("quiz", "Ja")
 		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{"quiz": "Ja!"})
+	} else if hash_flag == "dummy" {
+		session.Set("rdr2", "Ja")
 	} else {
 		fmt.Println("nein")
 		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{})
