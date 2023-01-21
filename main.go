@@ -18,6 +18,7 @@ func main() {
 	r.GET("/", index)
 	r.GET("/quiz", quiz)
 	r.GET("/rdr2", rdr2)
+	r.GET("/rdr2gusser", rdr2gusser)
 	r.GET("/download", download)
 
 	r.GET("/submit_flag", submit_flag)
@@ -35,6 +36,10 @@ func quiz(c *gin.Context) {
 
 func rdr2(c *gin.Context) {
 	c.HTML(http.StatusOK, "rdr2.html", gin.H{})
+}
+
+func rdr2gusser(c *gin.Context) {
+	c.HTML(http.StatusOK, "rdr2gusser.html", gin.H{})
 }
 
 func submit_flag(c *gin.Context) {
