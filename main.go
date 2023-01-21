@@ -15,6 +15,7 @@ func main() {
 	store := cookie.NewStore([]byte("secret"))
 	r.Use(sessions.Sessions("session", store))
 	r.Static("/assets", "./assets")
+	r.Static("/img", "./img")
 	r.LoadHTMLGlob("sites/*.html")
 
 	r.GET("/", index)
