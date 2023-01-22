@@ -3,11 +3,21 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
+	"strconv"
+	"strings"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 )
+
+func check(err error) {
+	if err != nil {
+		fmt.Println("Error!!!")
+		os.Exit(1)
+	}
+}
 
 func main() {
 	r := gin.Default()
@@ -66,8 +76,18 @@ func download(c *gin.Context) {
 }
 
 func image_click(c *gin.Context) {
+	// get query of request
 	q := c.Request.URL.Query()
+	// key is of type string
 	for key := range q {
-		fmt.Println(key)
+		xy := strings.Split(key, ",")  // split string into x and y
+		x, xerr := strconv.Atoi(xy[0]) // get x as int
+		check(xerr)                    // is x not int?
+		y, yerr := strconv.Atoi(xy[1]) // get y as int
+		check(yerr)                    // is y not int?
+
+		// is the clicked pos close enough?
+		// len between 2 points: https://youtu.be/CWUr6Jo6tag
+
 	}
 }
