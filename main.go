@@ -66,5 +66,8 @@ func download(c *gin.Context) {
 }
 
 func image_click(c *gin.Context) {
-
+	q := c.Request.URL.Query()
+	for key := range q {
+		fmt.Println(key)
+	}
 }
