@@ -15,7 +15,6 @@ func main() {
 	store := cookie.NewStore([]byte("secret"))
 	r.Use(sessions.Sessions("session", store))
 	r.Static("/assets", "./assets")
-	r.Static("/img", "./img")
 	r.LoadHTMLGlob("sites/*.html")
 
 	r.GET("/", index)
@@ -23,6 +22,7 @@ func main() {
 	r.GET("/rdr2", rdr2)
 	r.GET("/rdr2gusser", rdr2gusser)
 	r.GET("/download", download)
+	r.GET("/image_click", image_click)
 
 	r.GET("/submit_flag", submit_flag)
 
@@ -63,4 +63,8 @@ func submit_flag(c *gin.Context) {
 
 func download(c *gin.Context) {
 	c.File("files/out/a")
+}
+
+func image_click(c *gin.Context) {
+
 }
