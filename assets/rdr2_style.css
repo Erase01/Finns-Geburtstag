@@ -8,7 +8,7 @@ body {
     width: 100%;
     background-color: goldenrod;
     /*border: 3px solid darkgoldenrod;*/
-    background-image: url(/assets/train-background.jpg);
+    background-image: url(/assets/img/train-background.jpg);
     background-position: center;
     background-size: cover;
     /*background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,.7), rgba(0,0,0,.4), rgba(0,0,0,0));*/
