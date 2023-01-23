@@ -15,7 +15,7 @@ body {
 
 }
 
-.blur{
+.blur {
     background-image: 
     linear-gradient(rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 1) 100%),
     linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 8%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 92%, rgba(0, 0, 0, 0.8) 100%);
