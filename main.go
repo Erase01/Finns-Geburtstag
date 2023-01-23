@@ -100,17 +100,16 @@ func image_click(c *gin.Context) {
 func check_image_click(x int, y int, index int) float64 {
 	var d float64
 	// len between 2 points: https://youtu.be/CWUr6Jo6tag
-	if index == 0 {
-		// these are the points the user needs to click on (or close to that)
+	switch i := index; i {
+	case 0:
 		x2, y2 := 100, 100
 
 		xs, ys := math.Pow(float64(x2-x), 2), math.Pow(float64(y2-y), 2)
 		d = math.Sqrt(xs + ys)
+	}
 
-		// distance between click and desired pos shouldn't be > 25
-		if d > 25 {
-			return -1
-		}
+	if d > 25 {
+		return -1
 	}
 	return d
 }
