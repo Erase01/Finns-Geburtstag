@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"net/http"
 	"os"
 	"strconv"
@@ -87,7 +88,29 @@ func image_click(c *gin.Context) {
 		check(yerr)                    // is y not int?
 
 		// is the clicked pos close enough?
-		// len between 2 points: https://youtu.be/CWUr6Jo6tag
-
+		d := check_image_click(x, y, 0)
+		if d == -1 {
+			return
+		}
+		fmt.Println(d)
 	}
+}
+
+// coordinates of click and no. of image to check, if -1 the user is too far away
+func check_image_click(x int, y int, index int) float64 {
+	var d float64
+	// len between 2 points: https://youtu.be/CWUr6Jo6tag
+	if index == 0 {
+		// these are the points the user needs to click on (or close to that)
+		x2, y2 := 100, 100
+
+		xs, ys := math.Pow(float64(x2-x), 2), math.Pow(float64(y2-y), 2)
+		d = math.Sqrt(xs + ys)
+
+		// distance between click and desired pos shouldn't be > 25
+		if d > 25 {
+			return -1
+		}
+	}
+	return d
 }
