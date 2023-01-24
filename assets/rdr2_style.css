@@ -31,13 +31,17 @@ body {
 }
 
 .link-to-rdr2gusser {
-    background-color: red;
+    background-color: rgb(170, 0, 0);
     color: black;
     padding: 0.5em 1em;
-    border: 3px solid gray; 
+    border: 3px solid darkgray; 
     border-radius: 2em;
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
+}
+
+.link-to-rdr2gusser:hover {
+    background-color: rgb(136, 0, 0);
 }
