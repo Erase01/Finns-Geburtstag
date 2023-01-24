@@ -27,4 +27,17 @@ body {
     letter-spacing: normal;
     font-family: 'Courier New', Courier, monospace;
     /*font-size: ;*/
+    font-variant: normal;
+}
+
+.link-to-rdr2gusser {
+    background-color: red;
+    color: black;
+    padding: 0.5em 1em;
+    border: 3px solid gray; 
+    border-radius: 2em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
 }
