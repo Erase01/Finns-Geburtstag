@@ -92,7 +92,10 @@ func image_click(c *gin.Context) {
 		if d == -1 {
 			return
 		}
-		fmt.Println(d)
+		// convert to percentage of 25 and return it
+		perc_d := d / 25 * 100
+
+		c.HTML(http.StatusOK, "rdr2gusser.html", gin.H{"distance_percentage": perc_d})
 	}
 }
 
