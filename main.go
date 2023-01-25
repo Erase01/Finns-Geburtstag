@@ -54,7 +54,7 @@ func rdr2(c *gin.Context) {
 
 func rdr2gusser(c *gin.Context) {
 	c.HTML(http.StatusOK, "rdr2gusser.html", gin.H{
-				img_num: 0,
+				"img_num": 0,
 	})
 }
 
