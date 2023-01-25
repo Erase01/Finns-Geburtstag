@@ -7,10 +7,9 @@
   <body>
     {{template "navbar.html"}}
 
-    <div id="rdr2guesser_main">
-      <a href="/image_click">
-        <img src="/assets/testimg.png" alt="Funktioniert nicht" ismap>
-      </a>
+    <div>
+						<img src="/assets/guess_image{{.img_num}}.png" alt="Funktioniert nicht" ismap>
     </div>
+    {{ template "guesser" }}
   </body>
 </html>
