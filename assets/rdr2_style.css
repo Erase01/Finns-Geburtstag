@@ -31,7 +31,8 @@ body {
 }
 
 .play-comment {
-    
+    text-align: center;
+    margin-top: 5%;
 }
 
 .comment {
@@ -41,7 +42,7 @@ body {
     border-radius: 0.25em;
     width: 40%;
     padding: 0.25em 0.25em 0.25em 0.25em;
-    margin: 5% auto 0 auto;
+    margin: 2em auto 0 auto;
 }
 
 .link-to-rdr2gusser {
@@ -54,7 +55,6 @@ body {
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
-    margin: 50% 5% 6%;
     
 }
 
