@@ -99,11 +99,16 @@ func image_click(c *gin.Context) {
 
 		session := sessions.Default(c)
 		img_num := session.Get("img_num")
+		fmt.Println(img_num)
 		if img_num == nil {
 			img_num = 0
 		}
 		session.Set("img_num", img_num.(int)+1)
+		fmt.Println(img_num)
 		session.Set("img_num_perc", perc_d)
+		fmt.Println(perc_d)
+		session.Save()
+		fmt.Println(session)
 
 		c.HTML(http.StatusPermanentRedirect, "rdr2gusser.html", gin.H{
 			"distance_percentage": perc_d,
