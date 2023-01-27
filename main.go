@@ -97,9 +97,17 @@ func image_click(c *gin.Context) {
 		// convert to percentage of 25 and return it
 		perc_d := d / 25 * 100
 
+		session := sessions.Default(c)
+		img_num := session.Get("img_num")
+		if img_num == nil {
+			img_num = 0
+		}
+		session.Set("img_num", img_num.(int)+1)
+		session.Set("img_num_perc", perc_d)
+
 		c.HTML(http.StatusPermanentRedirect, "rdr2gusser.html", gin.H{
 			"distance_percentage": perc_d,
-			"img_num":             1,
+			"img_num":             img_num.(int) + 1,
 		})
 	}
 }
