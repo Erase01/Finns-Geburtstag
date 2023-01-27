@@ -37,6 +37,8 @@ func main() {
 
 	r.GET("/submit_flag", submit_flag)
 
+	r.POST("/start_rdr2gusser", start_rdr2gusser)
+
 	r.Run()
 }
 
@@ -101,15 +103,21 @@ func image_click(c *gin.Context) {
 		perc_d := d / 25 * 100
 
 		session := sessions.Default(c)
+		fmt.Println("session got")
 		img_num := session.Get("img_num")
 		if img_num == nil {
+			fmt.Println("img_num is nil")
 			c.HTML(http.StatusPermanentRedirect, "rdr2.html", gin.H{
 				"message": "du musst erst das spiel starten",
 			})
+			return
 		}
 		session.Set("img_num", img_num.(int)+1)
+		fmt.Println("img_num set")
 		session.Set("img_num_perc", perc_d)
+		fmt.Println("img_num_perc set")
 		session.Save()
+		fmt.Println("session saved")
 
 		c.HTML(http.StatusPermanentRedirect, "rdr2gusser.html", gin.H{
 			"distance_percentage": perc_d,
@@ -134,4 +142,13 @@ func check_image_click(x int, y int, index int) float64 {
 		return -1
 	}
 	return d
+}
+
+func start_rdr2gusser(c *gin.Context) {
+	session := sessions.Default(c)
+	session.Set("img_num", 0)
+	session.Save()
+	c.HTML(http.StatusPermanentRedirect, "rdr2gusser.html", gin.H{
+		"img_num": 0,
+	})
 }
