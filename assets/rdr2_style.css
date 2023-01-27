@@ -71,3 +71,26 @@ body {
 .link-to-rdr2gusser:hover {
     background-color: rgb(136, 0, 0);
 }
+
+.discover {
+    margin-top: 2%;
+    display: inline-block;
+    overflow: auto;
+}
+
+.hdis {
+    font-size: larger;
+
+}
+
+.disimg {
+    margin-top: 2%;
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+}
+
+.playwith {
+    clear: left;
+    overflow: auto;
+}
