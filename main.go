@@ -41,6 +41,9 @@ func main() {
 }
 
 func index(c *gin.Context) {
+	session := sessions.Default(c)
+	session.Clear()
+	session.Save()
 	c.HTML(http.StatusOK, "index.html", gin.H{"rdr2": "Nein", "quiz": "Nein"})
 }
 
