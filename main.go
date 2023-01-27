@@ -15,7 +15,7 @@ import (
 
 func check(err error) {
 	if err != nil {
-		fmt.Println("Error!!!")
+		fmt.Println("Error: ", err)
 		os.Exit(1)
 	}
 }
@@ -74,7 +74,7 @@ func submit_flag(c *gin.Context) {
 	} else if hash_flag == "dummy" {
 		session.Set("rdr2", "Ja")
 	} else {
-		fmt.Println("nein")
+
 		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{})
 	}
 }
@@ -103,21 +103,21 @@ func image_click(c *gin.Context) {
 		perc_d := d / 25 * 100
 
 		session := sessions.Default(c)
-		fmt.Println("session got")
+
 		img_num := session.Get("img_num")
 		if img_num == nil {
-			fmt.Println("img_num is nil")
+
 			c.HTML(http.StatusPermanentRedirect, "rdr2.html", gin.H{
 				"message": "du musst erst das spiel starten",
 			})
 			return
 		}
 		session.Set("img_num", img_num.(int)+1)
-		fmt.Println("img_num set")
+
 		session.Set("img_num_perc", perc_d)
-		fmt.Println("img_num_perc set")
+
 		session.Save()
-		fmt.Println("session saved")
+
 
 		c.HTML(http.StatusPermanentRedirect, "rdr2gusser.html", gin.H{
 			"distance_percentage": perc_d,
