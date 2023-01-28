@@ -13,6 +13,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+const ERR_VALUE = -1
+
 func check(err error) {
 	if err != nil {
 		fmt.Println("Error: ", err)
@@ -129,23 +131,42 @@ func image_click(c *gin.Context) {
 	}
 }
 
-// coordinates of click and no. of image to check, if -1 the user is too far away
+// coordinates of click and no. of image to check
 func check_image_click(x int, y int, index int) float64 {
-	var d float64
+	var d float64 // distance
+	var x2, y2 int // x and y of the image the user should have clicked close to
+	const MAX_DISTANCE = 25 // max distance between click and wanted pos
 	// len between 2 points: https://youtu.be/CWUr6Jo6tag
 	switch i := index; i {
 	case 0:
-		x2, y2 := 100, 100
-
-		xs, ys := math.Pow(float64(x2-x), 2), math.Pow(float64(y2-y), 2)
-		d = math.Sqrt(xs + ys)
+		x2, y2 = 100, 100
+	case 1:
+		x2, y2 = 101, 101
+	case 2:
+		x2, y2 = 102, 102
+	case 3:
+		x2, y2 = 103, 103
+	case 4:
+		x2, y2 = 104, 104
+	case 5:
+		x2, y2 = 105, 105
+	case _:
+		return ERR_VAL
 	}
 
-	if d > 25 {
-		return -1
+	d = get_distance(x, x2, y, y2)
+
+	if d > MAX_DISTANCE {
+		return ERR_VAL
 	}
 	return d
 }
+
+func get_distance(x1 int, x2 int, y1 int, y2 int) float64 {
+	d := math.Sqrt(math.Pow(float64(x2-x1), 2), math.Pow(float64(y2-y1), 2))
+	return d
+}
+
 
 func start_rdr2gusser(c *gin.Context) {
 	session := sessions.Default(c)
