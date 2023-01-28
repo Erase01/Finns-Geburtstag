@@ -7,8 +7,6 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
-    export GOPATH=$PWD
-    export PATH=$PATH:$GOPATH/bin
     eval `ssh-agent`
     ssh-add ~/.ssh/id_rsa
   '';
