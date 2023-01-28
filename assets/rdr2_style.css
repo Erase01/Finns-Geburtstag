@@ -73,21 +73,40 @@ body {
 }
 
 .discover {
-    margin-top: 2%;
+    /*margin: 5% 0% 0% 15%;
     display: inline-block;
-    overflow: auto;
+    overflow: auto;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20em;
 }
 
-.hdis {
-    font-size: larger;
+.center-discover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#headdis {
+    font-family: 'Courier New', Courier, monospace;
+    font-variant: normal;
+}
+
+.dis {
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+    margin-right: 5em;
 }
 
 .disimg {
-    margin-top: 2%;
+    /*margin: 5% 15% 0% 0%;
     display: inline-block;
     vertical-align: top;
     float: right;
+    margin-right: 15%;*/
+    max-height: 50px;
 }
 
 .playwith {
