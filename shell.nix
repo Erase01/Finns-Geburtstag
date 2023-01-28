@@ -3,7 +3,13 @@
 pkgs.mkShell {
   nativeBuildInputs = [
     pkgs.go
-    pkgs.helix
-    pkgs.gopls
+    pkgs.docker
   ];
+
+  shellHook = ''
+    export GOPATH=$PWD
+    export PATH=$PATH:$GOPATH/bin
+    eval `ssh-agent`
+    ssh-add ~/.ssh/id_rsa
+  '';
 }
