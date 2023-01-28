@@ -11,6 +11,11 @@
     {{template "navbar.html"}}        <!--Go templating navbar-->
     <header class="site-header">
       <h1 id="RDR2header"> RED DEAD REDEMPTION II Gusser</h1>
+      {{ if .message }}
+	<div class="message_box">
+	      <h1 class="message">{{ .message }}</h1>
+	</div>
+      {{ end }}
     </header>
     <nav class="site-nav"></nav>
     <main class="site-main">

@@ -94,3 +94,12 @@ body {
     clear: left;
     overflow: auto;
 }
+
+.message_box {
+    text-align: center;
+    margin-top: 5%;
+    letter-spacing: normal;
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+    font-variant: normal;
+}

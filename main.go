@@ -97,6 +97,9 @@ func image_click(c *gin.Context) {
 		// is the clicked pos close enough?
 		d := check_image_click(x, y, 0)
 		if d == -1 {
+			c.HTML(http.StatusPermanentRedirect, "rdr2.html", gin.H{
+				"message": "Falsch! Du bist zu weit weg!",
+			})
 			return
 		}
 		// convert to percentage of 25 and return it
