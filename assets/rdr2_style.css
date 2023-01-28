@@ -110,8 +110,33 @@ body {
 }
 
 .playwith {
-    clear: left;
-    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 10em;
+}
+
+.center-playwith {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#plhead {
+    font-family: 'Courier New', Courier, monospace;
+    font-variant: normal;
+}
+
+.pldis {
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 5em;
+}
+
+#plimg {
+    margin-right: 5em;
 }
 
 .message_box {
