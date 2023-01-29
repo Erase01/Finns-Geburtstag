@@ -70,14 +70,14 @@ func submit_flag(c *gin.Context) {
 	hash_flag := get_hash(flag)
 	// 73c46df076e245e59cfe4e3d362b0c2c is the hash of the `strings` command flag
 	session := sessions.Default(c)
-	if hash_flag == "73c46df076e245e59cfe4e3d362b0c2c" {
-		session.Set("quiz", "Ja")
-		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{"quiz": "Ja!"})
-	} else if hash_flag == "dummy" {
-		session.Set("rdr2", "Ja")
-	} else {
-
-		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{})
+	switch hash_flag {
+		case "73c46df076e245e59cfe4e3d362b0c2c":
+			session.Set("quiz", "Ja")
+			c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{"quiz": "Ja!"})
+		case "dummy":
+			session.Set("rdr2", "Ja")
+		default:
+			c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{})
 	}
 }
 
