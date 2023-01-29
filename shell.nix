@@ -3,11 +3,12 @@
 pkgs.mkShell {
   nativeBuildInputs = [
     pkgs.go
-    pkgs.docker
+    pkgs.tmux
   ];
 
   shellHook = ''
     eval `ssh-agent`
     ssh-add ~/.ssh/id_rsa
+    git pull
   '';
 }

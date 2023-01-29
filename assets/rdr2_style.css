@@ -147,3 +147,33 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-variant: normal;
 }
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    width: 70%
+    margin-left: 15%;
+}
+
+.row-item {
+    display: flex;
+}
+
+.row-2 {
+    margin-top: 5%;
+}
+
+.row-3 {
+    margin-top: 5%;
+}
+
+.text-item {
+    text-align: left;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-variant: normal;
+		margin-right: 5%;
+}
