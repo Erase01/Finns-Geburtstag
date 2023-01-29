@@ -99,20 +99,20 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 5%;
-    width: 70%
-    margin-left: 15%;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .row-item {
     display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
-.row-2 {
-    margin-top: 5%;
-}
-
-.row-3 {
-    margin-top: 5%;
+.row-n {
+	margin-top: 3%;
 }
 
 .text-item {
