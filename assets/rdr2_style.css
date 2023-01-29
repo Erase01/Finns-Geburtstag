@@ -30,16 +30,6 @@ body {
     font-variant: normal;
 }
 
-.explore {
-    text-align: center;
-    margin-top: 5%;
-    letter-spacing: normal;
-    font-size: larger;
-    font-family: 'Courier New', Courier, monospace;
-    font-variant: normal;
-
-}
-
 .play-comment {
     text-align: center;
     margin-top: 5%;
@@ -72,34 +62,6 @@ body {
     background-color: rgb(136, 0, 0);
 }
 
-.discover {
-    /*margin: 5% 0% 0% 15%;
-    display: inline-block;
-    overflow: auto;*/
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20em;
-}
-
-.center-discover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#headdis {
-    font-family: 'Courier New', Courier, monospace;
-    font-variant: normal;
-}
-
-.dis {
-    font-size: larger;
-    font-family: 'Courier New', Courier, monospace;
-    margin-right: 5em;
-}
-
 .disimg {
     /*margin: 5% 15% 0% 0%;
     display: inline-block;
@@ -116,23 +78,6 @@ body {
     align-items: center;
     position: relative;
     margin-top: 10em;
-}
-
-.center-playwith {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#plhead {
-    font-family: 'Courier New', Courier, monospace;
-    font-variant: normal;
-}
-
-.pldis {
-    font-size: larger;
-    font-family: 'Courier New', Courier, monospace;
-    margin-left: 5em;
 }
 
 #plimg {
