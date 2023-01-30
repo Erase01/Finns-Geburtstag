@@ -4,27 +4,61 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/style.css">
   </head>
   <body>
     {{template "navbar.html"}}
-    <div id="ctf_table">
-      <table>
-        <tr>
-          <th>Aufgabe</th>
-          <th>Versuchen</th>
-          <th>Fertig?</th>
-        </tr>
-        <tr>
-          <td>RDR2 Guesser</td>
-          <td><a href="/rdr2">hier</a></td>
-          <td>{{.rdr2}}</td>
-        </tr>
-        <tr>
-          <td>Quiz Spiel</td>
-          <td><a href="/quiz">hier</a></td>
-          <td>{{.quiz}}</td>
-        </tr>
-      </table>
+    <div id="main_wrapper">
+      <div id="title">
+        <h1 id="title_text">Wilkommen!</h1>
+        <p>Hier ist ein kleines CTF-inspiriertes Spiel!</p>
+	<a href="#info_wrapper">Info</a>
+      </div>
+      <div id="ctf_table_wrapper">
+        <div id="ctf_table">
+          <table>
+            <tr>
+              <th>Aufgabe</th>
+              <th>Versuchen</th>
+              <th>Fertig?</th>
+            </tr>
+            <tr>
+              <td>RDR2 Guesser</td>
+              <td><a href="/rdr2">hier</a></td>
+              <td>{{.rdr2}}</td>
+            </tr>
+            <tr>
+              <td>Quiz Spiel</td>
+              <td><a href="/quiz">hier</a></td>
+              <td>{{.quiz}}</td>
+            </tr>
+            <tr>
+              <td>Kopf anschalten</td>
+              <td><a href="/kopf">hier</a></td>
+              <td>{{.kopf}}</td>
+          </table>
+        </div>
+      </div>
+      <div id="info_wrapper">
+	<div id="info info_title">
+		<h1>Info</h1>
+	</div>
+	<div id="info info_insg">
+		<h2>Info über das Spiel</h2>
+		<p>Das Spiel ist ein kleines CTF-inspiriertes Spiel, bei dem du versuchen musst, die Aufgaben zu lösen um die Flagge zu erhalten! Es gibt 3 Aufgaben, die du erledigen musst. Wenn du alle 3 Flaggen eingereicht hast, bekommst du die Box mit den Geschenken!</p>
+	<div id="info info_rdr2">
+		<h2>Info über RDR2</h2>
+		<p>Das Spiel ist ein kleines Ratespiel, bei dem du versuchen musst, zu erraten wo du bist. Je dichter du kommst, desto mehr punkte bekommst Du! Das Ziel ist es, mindestend 5000 Punkte zu erreichen! Es gibt 5 Orte, bei denen du je maximal 1250 Punkte erreichen kannst. Wenn du das Ziel erreicht hast, erhältst du die Flagge!</p>
+	</div>
+	<div id="info info_quiz">
+		<h2>Info über Quiz</h2>
+		<p>Das Spiel ist ein kleines Quiz, bei dem du versuchen musst, die richtige Antwort zu erraten um die Flagge zu erhalten! Aber pass auf, denn du hast nur 3 Versuche! </p>
+	</div>
+	<div id="info info_kopf">
+		<h2>Info über Kopf</h2>
+		<p>Hier ist ein kleines Spiel, bei dem du selber erraten musst, was du überhaupt machen musst! Du kannst einen Tipp erhalten, wenn du wirklich nicht weiter weisst und schon länger als 5 minuten daran sitzt.
+	</div>
+      </div>
     </div>
   </body>
 </html>
