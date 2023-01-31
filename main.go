@@ -23,6 +23,7 @@ func check(err error) {
 }
 
 func main() {
+	// fmt.Println(get_hash("hier flag eintragen"))
 	r := gin.Default()
 
 	store := cookie.NewStore([]byte("secret"))
