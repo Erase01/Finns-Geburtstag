@@ -24,6 +24,7 @@ func check(err error) {
 
 func main() {
 	// fmt.Println(get_hash("hier flag eintragen"))
+
 	r := gin.Default()
 
 	store := cookie.NewStore([]byte("secret"))
@@ -37,6 +38,7 @@ func main() {
 	r.GET("/rdr2gusser", rdr2gusser)
 	r.GET("/download", download)
 	r.GET("/image_click", image_click)
+	r.GET("/kopf", kopf)
 
 	r.GET("/submit_flag", submit_flag)
 
@@ -50,6 +52,10 @@ func index(c *gin.Context) {
 	session.Clear()
 	session.Save()
 	c.HTML(http.StatusOK, "index.html", gin.H{"rdr2": "Nein", "quiz": "Nein", "kopf": "Nein"})
+}
+
+func kopf(c *gin.Context) {
+	c.HTML(http.StatusOK, "burb.html", gin.H{})
 }
 
 func quiz(c *gin.Context) {
