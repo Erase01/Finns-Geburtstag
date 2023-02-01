@@ -55,6 +55,10 @@ func index(c *gin.Context) {
 }
 
 func kopf(c *gin.Context) {
+	for i, v := range c.Request.Header {
+		fmt.Println(i, v)
+	}
+
 	c.HTML(http.StatusOK, "burb.html", gin.H{})
 }
 
