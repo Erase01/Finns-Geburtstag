@@ -55,9 +55,11 @@ func index(c *gin.Context) {
 }
 
 func kopf(c *gin.Context) {
-	for i, v := range c.Request.Header {
-		fmt.Println(i, v)
+	if c.Request.Header["Accept-Language"][0] == "en-US" {
+		fmt.Println("du musst deutsch sein")
+		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{})
 	}
+	fmt.Println(c.Request.Header["Accept-Language"])
 
 	c.HTML(http.StatusOK, "burb.html", gin.H{})
 }
