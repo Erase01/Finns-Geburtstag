@@ -23,7 +23,7 @@ func check(err error) {
 }
 
 func main() {
-	// fmt.Println(get_hash("hier flag eintragen"))
+	fmt.Println(get_hash("RDR2-Gusser"))
 
 	r := gin.Default()
 
@@ -51,10 +51,7 @@ func index(c *gin.Context) {
 	session := sessions.Default(c)
 	session.Clear()
 	session.Save()
-	c.HTML(http.StatusOK, "index.html", gin.H{"rdr2": "Nein", 
-		"quiz": "Nein",
-		"kopf": "Nein",
-	})
+	c.HTML(http.StatusOK, "index.html", gin.H{"rdr2": "Nein", "quiz": "Nein", "kopf": "Nein"})
 }
 
 func kopf(c *gin.Context) {
@@ -87,13 +84,15 @@ func submit_flag(c *gin.Context) {
 	// 73c46df076e245e59cfe4e3d362b0c2c is the hash of the `strings` command flag
 	session := sessions.Default(c)
 	switch hash_flag {
-		case "73c46df076e245e59cfe4e3d362b0c2c":
-			session.Set("quiz", "Ja")
-			c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{"quiz": "Ja!"})
-		case "dummy":
-			session.Set("rdr2", "Ja")
-		default:
-			c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{})
+	case "73c46df076e245e59cfe4e3d362b0c2c":
+		session.Set("quiz", "Ja")
+		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{"quiz": "Ja!"})
+	case "dummy":
+		session.Set("rdr2", "Ja")
+	case "cac2549b310b664bf3143d888bcf74bc":
+		session.Set("gusser", "Ja")
+	default:
+		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{})
 	}
 }
 
@@ -139,7 +138,6 @@ func image_click(c *gin.Context) {
 
 		session.Save()
 
-
 		c.HTML(http.StatusPermanentRedirect, "rdr2gusser.html", gin.H{
 			"distance_percentage": perc_d,
 			"img_num":             img_num.(int) + 1,
@@ -149,8 +147,8 @@ func image_click(c *gin.Context) {
 
 // coordinates of click and no. of image to check
 func check_image_click(x int, y int, index int) float64 {
-	var d float64 // distance
-	var x2, y2 int // x and y of the image the user should have clicked close to
+	var d float64           // distance
+	var x2, y2 int          // x and y of the image the user should have clicked close to
 	const MAX_DISTANCE = 25 // max distance between click and wanted pos
 	switch i := index; i {
 	case 0:
@@ -182,7 +180,6 @@ func get_distance(x1 int, x2 int, y1 int, y2 int) float64 {
 	d := math.Sqrt(math.Pow(float64(x2-x1), 2) + math.Pow(float64(y2-y1), 2))
 	return d
 }
-
 
 func start_rdr2gusser(c *gin.Context) {
 	session := sessions.Default(c)
