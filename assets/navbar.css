@@ -3,6 +3,7 @@
   overflow: hidden;
   top: 0;
   width: 100%;
+  border-radius: 20px;
 }
 
 /* buttons in the navbar */
@@ -25,4 +26,13 @@
   text-decoration: none;
   font-size: 17px;
   background-color: #333;
+}
+
+.first_navbutton {
+  border-left: none;
+}
+
+.navbutton {
+  border: none;
+  border-left: 1px solid #bbb;
 }
