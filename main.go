@@ -23,7 +23,7 @@ func check(err error) {
 }
 
 func main() {
-	fmt.Println(get_hash("RDR2-Gusser"))
+	//fmt.Println(get_hash("udidit"))
 
 	r := gin.Default()
 
@@ -91,6 +91,8 @@ func submit_flag(c *gin.Context) {
 		session.Set("rdr2", "Ja")
 	case "cac2549b310b664bf3143d888bcf74bc":
 		session.Set("gusser", "Ja")
+	case "ee4dea37bfe4fb2d92d5b8186e762285":
+		session.Set("burp", "Ja")
 	default:
 		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{})
 	}
