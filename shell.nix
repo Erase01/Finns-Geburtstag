@@ -4,6 +4,7 @@ pkgs.mkShell {
   nativeBuildInputs = [
     pkgs.go
     pkgs.tmux
+    pkgs.burpsuite
   ];
 
   shellHook = ''
