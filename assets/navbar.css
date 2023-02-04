@@ -1,9 +1,14 @@
 #navbar {
   background-color: #333;
   overflow: hidden;
-  top: 0;
-  width: 100%;
+  width: 80%;
   border-radius: 20px;
+  margin-left: 10%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-grow: 1;
 }
 
 /* buttons in the navbar */
@@ -34,5 +39,4 @@
 
 .navbutton {
   border: none;
-  border-left: 1px solid #bbb;
 }
