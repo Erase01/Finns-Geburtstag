@@ -1,11 +1,38 @@
 body {
     background-color: orange;
 }
-.info_card {
+
+.site-main {
     margin: 0;
     height: calc(100vh - 50px);
     display: flex;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     justify-content: center;
+}
+
+.info_card {
+    width: 400px;
+    background-color: lightcoral;
+    padding: 25px 30px;
+    border-radius: 25px;
+    position: relative;
+    clip-path: circle(5% at 93.5% 15%);
+}
+
+.info_card .info_btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50%;
+    line-height: 40px;
+}
+
+.info_card:hover {
+    clip-path: circle(75%);
 }
