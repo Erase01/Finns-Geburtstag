@@ -44,7 +44,7 @@ func main() {
 
 	r.POST("/start_rdr2gusser", start_rdr2gusser)
 
-	r.Run(":8081")
+	r.Run(":8080")
 }
 
 func index(c *gin.Context) {
