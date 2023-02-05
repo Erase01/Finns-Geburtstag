@@ -44,7 +44,7 @@ func main() {
 
 	r.POST("/start_rdr2gusser", start_rdr2gusser)
 
-	r.Run()
+	r.Run(":8081")
 }
 
 func index(c *gin.Context) {
@@ -55,11 +55,10 @@ func index(c *gin.Context) {
 }
 
 func kopf(c *gin.Context) {
-	if c.Request.Header["Accept-Language"][0] == "en-US" {
+	if c.Request.Header["Accept-Language"][0][:5] == "en-US" {
 		fmt.Println("du musst deutsch sein")
 		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{})
 	}
-	fmt.Println(c.Request.Header["Accept-Language"])
 
 	c.HTML(http.StatusOK, "burb.html", gin.H{})
 }
