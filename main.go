@@ -58,6 +58,8 @@ func kopf(c *gin.Context) {
 	if c.Request.Header["Accept-Language"][0][:5] == "en-US" {
 		fmt.Println("du musst deutsch sein")
 		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{})
+	} else if c.Request.Header["Accept-Language"][0][:5] == "de-DE" {
+		c.HTML(http.StatusOK, "kopf.html", gin.H{})
 	}
 
 	c.HTML(http.StatusOK, "burb.html", gin.H{})
