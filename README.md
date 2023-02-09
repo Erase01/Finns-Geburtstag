@@ -3,6 +3,11 @@
 
 # Mit Docker laufen lassen
 Das Programm soll als Docker-Container laufen
+
+## Docker container bauen
+```bash
+$ docker build .
+```
 ## Programm in einen Docker-Container verpacken
 ```bash
 $ docker images # alle docker images anzeigen
