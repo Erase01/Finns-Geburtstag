@@ -8,11 +8,14 @@
     <script language="javascript" type="text/javascript" src="/assets/gusser.js"></script>
   </head>
   <body>
-    {{template "navbar.html"}}
-
-    <div>
-	<img src="/assets/img/RDR2-B{{.img_num}}.jpg" alt="Funktioniert nicht" ismap>
-    </div>
-    {{ template "guesser" }}
+    <header>
+      {{template "navbar.html"}}
+    </header>
+    <main class="main-gusser">
+      <div class="pic-border">
+          <img class="picture" src="/assets/img/RDR2-B{{.img_num}}.jpg" alt="Funktioniert nicht" ismap>
+      </div>
+      {{ template "guesser" }}
+    </main>
   </body>
 </html>
