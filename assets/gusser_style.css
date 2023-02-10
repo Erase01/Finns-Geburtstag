@@ -1,0 +1,16 @@
+.main-gusser {
+    height: auto;
+    width: 100%;
+    background-color: red;
+    background-image: url();
+    background-position: center;
+    background-size: cover;
+}
+
+.picture {
+    width: 100em;
+    height: 60em;
+    margin-top: 5%; 
+    border-radius: 3%;
+    border: 0.2em solid darkgray;
+}
