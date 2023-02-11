@@ -1,24 +1,7 @@
 {{ define "guesser" }}
     <div id="rdr2guesser_guesser">
-      <div id="size_slider">
-	<input type="range" min="1" max="100" value="50" class="slider" id="size_slider">
-	  <output id="sliderVal" hidden> </output>
-	</div>
-      <a href="/image_click">
-        <img src="/assets/img/map.png" alt="Funktioniert nicht" class="map_img" id="img_to_click" ismap>
-      </a>
+        <a href="/image_click">
+          <img src="/assets/img/map.png" alt="Funktioniert nicht" class="map_img" id="img_to_click" ismap>
+        </a>
     </div>
-    <script>
-	var slider = document.getElementById("size_slider");
-	var image = document.getElementById("img_to_click").style;
-	var output = document.getElementById("sliderVal");
-	console.log("test");
-
-	slider.oninput = function() {
-		var val = document.getElementById("size_slider").value;
-		document.getElementById("img_to_click").style.width =  val + "%";
-		console.log("output changed2");
-	}
-    </script>
-
 {{ end }}
