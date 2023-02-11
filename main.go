@@ -152,7 +152,7 @@ func image_click(c *gin.Context) {
 func check_image_click(x int, y int, index int) float64 {
 	var d float64           // distance
 	var x2, y2 int          // x and y of the image the user should have clicked close to
-	const MAX_DISTANCE = 25 // max distance between click and wanted pos
+	const MAX_DISTANCE = 50 // max distance between click and wanted pos
 	switch i := index; i {
 	case 0:
 		x2, y2 = 100, 100
