@@ -155,7 +155,7 @@ func check_image_click(x int, y int, index int) float64 {
 	const MAX_DISTANCE = 25 // max distance between click and wanted pos
 	switch i := index; i {
 	case 0:
-		x2, y2 = 100, 100
+		x2, y2 = 1088, 656
 	case 1:
 		x2, y2 = 1030, 385
 	case 2:
