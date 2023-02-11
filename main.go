@@ -157,15 +157,25 @@ func check_image_click(x int, y int, index int) float64 {
 	case 0:
 		x2, y2 = 100, 100
 	case 1:
-		x2, y2 = 101, 101
+		x2, y2 = 1030, 385
 	case 2:
-		x2, y2 = 102, 102
+		x2, y2 = 1060, 370
 	case 3:
-		x2, y2 = 103, 103
+		x2, y2 = 1080, 325
 	case 4:
-		x2, y2 = 104, 104
+		x2, y2 = 1100, 344
 	case 5:
-		x2, y2 = 105, 105
+		x2, y2 = 1162, 333
+	case 6:
+		x2, y2 = 1167, 338
+	case 7:
+		x2, y2 = 1188, 269
+	case 8:
+		x2, y2 = 1211, 267
+	case 9:
+		x2, y2 = 1223, 377
+	case 10:
+		x2, y2 = 1141, 264
 	default:
 		return ERR_VALUE
 	}
