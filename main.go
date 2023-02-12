@@ -153,6 +153,8 @@ func check_image_click(x int, y int, index int) float64 {
 	var d float64           // distance
 	var x2, y2 int          // x and y of the image the user should have clicked close to
 	const MAX_DISTANCE = 50 // max distance between click and wanted pos
+
+	fmt.Println(x, y)
 	switch i := index; i {
 	case 0:
 		x2, y2 = 1088, 656
@@ -181,7 +183,7 @@ func check_image_click(x int, y int, index int) float64 {
 	}
 
 	d = get_distance(x, x2, y, y2)
-
+	fmt.Println(d)
 	if d > MAX_DISTANCE {
 		return ERR_VALUE
 	}
