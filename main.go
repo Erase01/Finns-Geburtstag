@@ -13,6 +13,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+var _index = 0
+
 const ERR_VALUE = -1
 
 func check(err error) {
@@ -154,9 +156,7 @@ func check_image_click(x int, y int, index int) float64 {
 	var x2, y2 int          // x and y of the image the user should have clicked close to
 	const MAX_DISTANCE = 50 // max distance between click and wanted pos
 
-	fmt.Println(x, y)
-	fmt.Println(index)
-	switch i := index; i {
+	switch i := _index; i {
 	case 0:
 		x2, y2 = 1088, 656
 	case 1:
@@ -188,6 +188,7 @@ func check_image_click(x int, y int, index int) float64 {
 	if d > MAX_DISTANCE {
 		return ERR_VALUE
 	}
+	_index = _index + 1
 	return d
 }
 
