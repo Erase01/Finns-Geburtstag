@@ -186,6 +186,7 @@ func check_image_click(x int, y int, index int) float64 {
 	d = get_distance(x, x2, y, y2)
 	fmt.Println(d)
 	if d > MAX_DISTANCE {
+		_index = 0
 		return ERR_VALUE
 	}
 	_index = _index + 1
