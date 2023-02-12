@@ -27,6 +27,7 @@ func check(err error) {
 func main() {
 	//fmt.Println(get_hash("udidit"))
 
+	fmt.Println(get_hash("FLAG_kfdskfs994_FLAG"))
 	r := gin.Default()
 
 	store := cookie.NewStore([]byte("secret"))
@@ -92,7 +93,7 @@ func submit_flag(c *gin.Context) {
 		c.HTML(http.StatusPermanentRedirect, "index.html", gin.H{"quiz": "Ja!"})
 	case "dummy":
 		session.Set("rdr2", "Ja")
-	case "cac2549b310b664bf3143d888bcf74bc":
+	case "97669c6d6c7e46e7e486f9f322fdfb24":
 		session.Set("gusser", "Ja")
 	case "ee4dea37bfe4fb2d92d5b8186e762285":
 		session.Set("burp", "Ja")
@@ -115,6 +116,10 @@ func image_click(c *gin.Context) {
 		check(xerr)                    // is x not int?
 		y, yerr := strconv.Atoi(xy[1]) // get y as int
 		check(yerr)                    // is y not int?
+
+		if _index == 11 {
+			c.HTML(http.StatusPermanentRedirect, "rdr2.html", gin.H{"message": "FLAG_kfdskfs994_FLAG"})
+		}
 
 		// is the clicked pos close enough?
 		d := check_image_click(x, y, 0)
@@ -180,6 +185,7 @@ func check_image_click(x int, y int, index int) float64 {
 	case 10:
 		x2, y2 = 1141, 264
 	default:
+		fmt.Println(i)
 		return ERR_VALUE
 	}
 
